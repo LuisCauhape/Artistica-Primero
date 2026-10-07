@@ -1,18 +1,17 @@
-<!DOCTYPE html>
-<html lang="es"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Artística · Espacio, color y composición</title>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Espacio, color y composición</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&display=swap">
 <style>
-:root{--bg:#fff7fb;--card:#ffffff;--ink:#2d2a3e;--mut:#6f6a85;--acc:#7b5cd6;--line:#e6dcf3;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root{--bg:#fff7fb;--card:#ffffff;--ink:#2d2a3e;--mut:#6f6a85;--acc:#7b5cd6;--line:#e6dcf3;--pb:#a99bf5}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Georgia,"Times New Roman",serif}
 header{max-width:780px;margin:0 auto;padding:36px 18px 10px}
-h1{font-size:clamp(2rem,7vw,3.2rem);line-height:1.05;margin:0}
+h1{font-size:clamp(2rem,7vw,3.2rem);line-height:1.05;margin:0;text-wrap:balance}
 header p{color:var(--mut);margin:10px 0 0}
-nav{position:sticky;top:0;background:var(--bg);z-index:5;padding:8px 14px;border-bottom:1px solid var(--line);display:flex;gap:6px;flex-wrap:wrap;justify-content:center;font-family:system-ui,sans-serif}
+nav{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5;padding:8px 14px;border-bottom:1px solid var(--line);display:flex;gap:6px;flex-wrap:wrap;justify-content:center;font-family:system-ui,sans-serif}
 nav button{font:600 .85rem system-ui;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:5px 10px;cursor:pointer}
 nav button.on{background:var(--acc);color:#fff;border-color:var(--acc)}
-main{max-width:780px;margin:0 auto;padding:18px 14px 50px;display:grid;gap:22px}
+main{max-width:780px;margin:0 auto;padding:18px 14px 120px;display:grid;gap:22px}
 article{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
 .top{display:flex;gap:14px;align-items:baseline;font-family:system-ui,sans-serif}
 .num{font:700 2.6rem Georgia,serif;color:var(--acc);line-height:1}
@@ -54,10 +53,61 @@ article.in .num{display:inline-block;animation:pop .8s}@keyframes pop{0%{transfo
 #pb{position:fixed;top:0;left:0;height:5px;width:0;z-index:30;background:linear-gradient(90deg,#ff9ec4,#9ad0ff,#a8e6b0,#ffe08a)}
 .blob{position:fixed;border-radius:50%;z-index:-1;opacity:.55;pointer-events:none}
 @media(prefers-reduced-motion:reduce){main article{opacity:1;transform:none}.keys span{opacity:1;transform:none}.blob{display:none}}
-</style></head><body>
-<header><div class="bg" aria-hidden="true"><span style="left:5%;top:18%;width:44px;height:44px;border-radius:50%;background:#d62839"></span><span style="left:82%;top:12%;width:40px;height:40px;background:#1f5fbf;animation-delay:-3s"></span><span style="left:70%;top:62%;width:0;height:0;border:24px solid transparent;border-bottom:42px solid #f5dc1e;animation-delay:-5s"></span><span style="left:12%;top:70%;width:34px;height:34px;border-radius:50%;background:#2e9e5b;animation-delay:-2s"></span></div><h1>Espacio, color y composición</h1><p>Una guía de lectura para mirar el arte: ideas clave, historia, civilizaciones y obras argentinas. Abrí cada sección, experimentá con los juegos y mirá ejemplos de la vida cotidiana.</p><p><button class="hb" onclick="go('aj')">🎮 Jugá el desafío</button> <button class="hb" onclick="go('al')">🧪 Probá el laboratorio</button></p></header>
+
+/* ---------- Pompi, el personaje guía ---------- */
+button:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.pm{display:block;width:100%;height:auto;overflow:visible}
+.pm .pg{transform-box:fill-box;transform-origin:50% 100%}
+.pm-idle .pg,.pm-cool .pg{animation:pmbr 3.2s ease-in-out infinite}
+.pm-happy .pg{animation:pmhop .8s ease-in-out infinite}
+.pm-doubt .pg{animation:pmwob 1.8s ease-in-out infinite}
+.pm-hurry .pg{animation:pmjit .22s linear infinite}
+.pm-mystery .pg{animation:pmsw 3.6s ease-in-out infinite}
+@keyframes pmbr{50%{transform:scale(1.03,1.05)}}
+@keyframes pmhop{0%,100%{transform:translateY(0)}40%{transform:translateY(-9%)}}
+@keyframes pmwob{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+@keyframes pmjit{0%,100%{transform:translate(-2%,0)}50%{transform:translate(2%,-2%)}}
+@keyframes pmsw{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+@media(prefers-reduced-motion:reduce){.pm .pg{animation:none!important}}
+.guia{display:flex;gap:10px;align-items:flex-end;margin:14px 0 6px}
+.pw{flex:0 0 78px;width:78px;min-width:0}
+button.pw{background:none;border:0;padding:0;cursor:pointer;font:inherit;color:inherit}
+.pw.big{flex:0 0 118px;width:118px}
+.bub{position:relative;flex:1 1 0;min-width:0;background:#fff;border:2px solid var(--ink);border-radius:18px 18px 18px 6px;padding:8px 13px 9px;font:500 .98rem/1.4 Fredoka,system-ui,sans-serif;color:var(--ink);box-shadow:3px 3px 0 rgba(123,92,214,.25)}
+.bub::before,.bub::after{content:"";position:absolute;bottom:12px;border-style:solid;border-width:7px 9px 7px 0;border-color:transparent var(--ink) transparent transparent;left:-11px}
+.bub::after{border-color:transparent #fff transparent transparent;left:-7px}
+.bub b{display:block;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--acc)}
+.bt b{display:inline;font-size:inherit;letter-spacing:0;text-transform:none;color:var(--acc)}
+.hero{display:flex;gap:14px;align-items:flex-end;margin-top:16px}
+.leg{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:8px;margin-top:14px;font-family:system-ui,sans-serif}
+.leg>div{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.7);border-radius:12px;padding:6px 8px;font-size:.8rem;line-height:1.25;min-width:0}
+.leg .pw{flex:0 0 44px;width:44px}
+.leg b{color:var(--ink)}
+.leg span{color:var(--mut)}
+#trail{position:fixed;left:0;right:0;bottom:0;height:calc(78px + env(safe-area-inset-bottom,0px));z-index:20;pointer-events:none;background:linear-gradient(to top,rgba(255,255,255,.93) 58%,rgba(255,255,255,0))}
+.trk{position:absolute;left:30px;right:30px;bottom:calc(14px + env(safe-area-inset-bottom,0px));height:6px;border-radius:3px;background:rgba(123,92,214,.2)}
+#tf{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:3px;background:linear-gradient(90deg,#ff9ec4,#9ad0ff,#a8e6b0,#ffe08a)}
+#tds{position:absolute;inset:0}
+.sd{position:absolute;top:50%;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:#fff;border:2px solid #cdbfee}
+.sd.on{background:var(--acc);border-color:var(--acc)}
+#tp{position:absolute;left:0;bottom:2px;width:44px;margin-left:-22px;transition:left .2s linear}
+#fp{position:fixed;right:0;bottom:calc(88px + env(safe-area-inset-bottom,0px));z-index:25;width:92px;pointer-events:none;transform:translateX(62%);transition:transform .35s cubic-bezier(.3,1.4,.5,1)}
+#fp.on{transform:translateX(-8px)}
+#fp .fb{position:absolute;right:calc(100% + 6px);bottom:34px;width:max-content;max-width:min(230px,calc(100vw - 130px));background:#fff;border:2px solid var(--ink);border-radius:16px 16px 6px 16px;padding:7px 12px;font:500 .92rem/1.35 Fredoka,system-ui,sans-serif;box-shadow:3px 3px 0 rgba(123,92,214,.25);opacity:0;transform:scale(.85);transform-origin:100% 100%;transition:opacity .25s,transform .25s}
+#fp.on .fb{opacity:1;transform:none}
+#fp .fb b{color:var(--acc)}
+@media(prefers-reduced-motion:reduce){#fp,#fp .fb{transition:none}}
+#tt{position:absolute;left:50%;transform:translateX(-50%);bottom:calc(68px + env(safe-area-inset-bottom,0px));background:#fff;border:2px solid var(--ink);border-radius:999px;padding:4px 14px;font:600 .85rem Fredoka,system-ui,sans-serif;white-space:nowrap;max-width:92vw}
+</style>
+<header><div class="bg" aria-hidden="true"><span style="left:5%;top:18%;width:44px;height:44px;border-radius:50%;background:#d62839"></span><span style="left:82%;top:12%;width:40px;height:40px;background:#1f5fbf;animation-delay:-3s"></span><span style="left:70%;top:62%;width:0;height:0;border:24px solid transparent;border-bottom:42px solid #f5dc1e;animation-delay:-5s"></span><span style="left:12%;top:70%;width:34px;height:34px;border-radius:50%;background:#2e9e5b;animation-delay:-2s"></span></div>
+<h1>Espacio, color y composición</h1>
+<div class="hero"><div class="pw big" id="hp"></div><div class="bub"><b>Pompi</b><span class="bt" id="hbt">¡Hola! Soy Pompi y hoy te acompaño en este recorrido. Vamos a mirar el arte juntos: ideas clave, historia, civilizaciones y obras argentinas. En cada parada abrí las secciones, experimentá con los juegos y fijate cómo cambia mi cara.</span></div></div>
+<div class="leg"><div><div class="pw" data-leg="happy"></div><span><b>Contento</b><br>Respondés bien</span></div><div><div class="pw" data-leg="doubt"></div><span><b>Dudando</b><br>Algo no salió, probemos</span></div><div><div class="pw" data-leg="hurry"></div><span><b>Apurado</b><br>Vas muy rápido</span></div><div><div class="pw" data-leg="mystery"></div><span><b>Misterioso</b><br>Hay algo por descubrir</span></div></div>
+<p><button class="hb" onclick="go('aj')">🎮 Jugá el desafío conmigo</button> <button class="hb" onclick="go('al')">🧪 Probá el laboratorio</button></p></header>
 <div id="pb"></div><div class="blob" style="left:-60px;top:12%;width:200px;height:200px;background:#ffd6e7"></div><div class="blob" style="right:-50px;top:35%;width:170px;height:170px;background:#cfe8ff"></div><div class="blob" style="left:8%;top:62%;width:130px;height:130px;background:#d6f5d6"></div><div class="blob" style="right:6%;top:80%;width:190px;height:190px;background:#fff0b3"></div><div class="blob" style="left:40%;top:-40px;width:110px;height:110px;background:#e6d9ff"></div><nav id="nav"></nav>
 <main id="m"></main>
+<div id="fp" aria-hidden="true"><div class="fb"></div><div class="fpm"></div></div>
+<div id="trail" aria-hidden="true"><div class="trk"><div id="tf"></div><div id="tds"></div><div id="tp"></div></div></div>
 <script>
 const MES={ago:'Agosto · Espacio y forma',sep:'Septiembre · Color',oct:'Octubre · Composición'};
 const D=[
@@ -92,40 +142,88 @@ e:[['La grilla de la cámara del celular','','Divide la pantalla en tercios para
 h:'La simetría se usó mucho en templos y palacios para dar sensación de orden y solemnidad, como en el Taj Mahal (India, siglo XVII).',
 e:[['Mariposas y rostros','','Tienen simetría axial: una mitad es casi el reflejo de la otra.'],['Copos de nieve y mandalas','','Tienen simetría radial: se repiten alrededor de un centro.'],['Un logo o un afiche','','Prestá atención: ¿es simétrico o asimétrico? ¿Qué sensación da?']],w:'sym',b:'Ya tenés todas las herramientas: ¡pasá al desafío y al laboratorio!'}
 ];
+
+// ---------- Pompi: personaje original, dibujado con SVG ----------
+const PK='#2d2a3e';
+function blobP(cx,cy,r,n,a){let d='';for(let i=0;i<n;i++){const a0=i/n*6.2832,a1=(i+1)/n*6.2832,am=(a0+a1)/2,p=(g,q)=>[(cx+Math.cos(g)*q).toFixed(1),(cy+Math.sin(g)*q*.95).toFixed(1)],s=p(a0,r),e=p(a1,r),c=p(am,r+a);if(!i)d+='M'+s[0]+' '+s[1];d+='Q'+c[0]+' '+c[1]+' '+e[0]+' '+e[1]}return d+'Z'}
+const BODY=blobP(60,56,38,14,9);
+const fg=s=>`<g fill="none" stroke="${PK}" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">${s}</g>`;
+const spark=(x,y,k)=>`<path d="M${x} ${y-k}L${x+k*.3} ${y-k*.3}L${x+k} ${y}L${x+k*.3} ${y+k*.3}L${x} ${y+k}L${x-k*.3} ${y+k*.3}L${x-k} ${y}L${x-k*.3} ${y-k*.3}Z" fill="#f5c518"/>`;
+const qm=(x,y,s)=>`<text x="${x}" y="${y}" font-family="Fredoka,system-ui,sans-serif" font-weight="600" font-size="${s}" fill="#7b5cd6">?</text>`;
+const drop=(x,y)=>`<path d="M${x} ${y}Q${x+6} ${y+10} ${x} ${y+15}Q${x-6} ${y+10} ${x} ${y}Z" fill="#8fd3ff" stroke="${PK}" stroke-width="2"/>`;
+const LEG='<path d="M48 92L46 120M42 120H50"/><path d="M72 92L74 120M70 120H78"/>';
+const PM={
+idle:{n:'tranquilo',l:LEG,a:'<path d="M22 62Q8 74 14 92"/><path d="M98 60Q113 50 108 32"/>',f:fg('<path d="M52 66Q60 73 68 66"/>')+`<circle cx="47" cy="52" r="3.4" fill="${PK}"/><circle cx="73" cy="52" r="3.4" fill="${PK}"/>`,x:''},
+happy:{n:'contento',l:'<path d="M48 92L40 118M34 118H42"/><path d="M72 92L80 118M78 118H86"/>',a:'<path d="M22 58Q6 46 12 26"/><path d="M98 58Q114 46 108 26"/>',f:fg('<path d="M39 54Q46 44 53 54M67 54Q74 44 81 54"/><path d="M48 63Q60 82 72 63Z" fill="#e8445a"/>')+'<ellipse cx="35" cy="64" rx="5" ry="3" fill="#ff8fa3" opacity=".8"/><ellipse cx="85" cy="64" rx="5" ry="3" fill="#ff8fa3" opacity=".8"/>',x:spark(8,12,7)+spark(112,8,6)+spark(100,40,4)},
+doubt:{n:'dudando',l:'<path d="M48 92L46 120M42 120H50"/><path d="M72 92L78 118M76 118H84"/>',a:'<path d="M22 62Q4 54 16 34Q22 28 34 28"/><path d="M98 62Q112 76 106 94"/>',f:fg('<path d="M40 45L54 41M66 41L80 46"/><path d="M48 70Q54 63 60 70T72 70"/>')+`<circle cx="47" cy="53" r="3" fill="${PK}"/><circle cx="73" cy="54" r="3" fill="${PK}"/>`,x:drop(96,28)+qm(100,20,22)+qm(2,22,16)},
+hurry:{n:'apurado',l:'<path d="M50 92L34 104L40 120"/><path d="M70 92L84 106L100 108"/>',a:'<path d="M22 62Q8 72 18 86"/><path d="M98 62Q114 54 106 40"/>',f:fg('<path d="M38 40L52 43M68 43L82 40"/><ellipse cx="60" cy="71" rx="7" ry="5.5" fill="#e8445a"/>')+`<circle cx="46" cy="53" r="7" fill="#fff" stroke="${PK}" stroke-width="2.5"/><circle cx="74" cy="53" r="7" fill="#fff" stroke="${PK}" stroke-width="2.5"/><circle cx="48" cy="54" r="2.6" fill="${PK}"/><circle cx="76" cy="54" r="2.6" fill="${PK}"/>`,x:'<path d="M0 44H12M2 60H14M0 76H10" fill="none" stroke="#7b5cd6" stroke-width="3" stroke-linecap="round"/>'+drop(104,26)+drop(14,22)},
+mystery:{n:'misterioso',l:LEG,a:'<path d="M22 62Q6 72 24 86"/>',f:fg('<path d="M40 53H54M66 53H80"/><path d="M40 46H54M64 42Q73 35 82 41"/><path d="M52 70Q60 72 70 65"/>')+`<circle cx="49" cy="57" r="2.4" fill="${PK}"/><circle cx="75" cy="57" r="2.4" fill="${PK}"/>`,x:`<g fill="none" stroke="${PK}" stroke-width="3.2" stroke-linecap="round"><path d="M97 64Q113 76 106 98"/><circle cx="92" cy="90" r="13" fill="#fff" fill-opacity=".6"/><path d="M101 99L112 112" stroke-width="5"/><path d="M83 86Q86 81 92 81" stroke="#fff" stroke-width="2.5"/></g>`+qm(10,26,22)},
+cool:{n:'canchero',l:LEG,a:'<path d="M22 62Q6 72 24 86"/><path d="M98 62Q114 72 96 86"/>',f:fg(`<path d="M34 46H86Q85 62 72 62Q63 62 60 54Q57 62 48 62Q35 62 34 46Z" fill="#1b1830"/><path d="M50 70Q60 78 70 70"/>`)+'<path d="M40 50L45 55M48 49L51 52" stroke="#fff" stroke-width="2" stroke-linecap="round" fill="none"/>',x:spark(10,14,7)+spark(110,12,6)}
+};
+function pompi(m){m=PM[m]?m:'idle';const o=PM[m];return `<svg class="pm pm-${m}" viewBox="0 0 120 132" role="img" aria-label="Pompi ${o.n}"><g class="pg"><g fill="none" stroke="${PK}" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">${o.l}${o.a}</g><path d="${BODY}" fill="#7b5cd6"/><path d="${BODY}" transform="translate(60 56) scale(.9) translate(-60 -56)" fill="#a99bf5"/><path d="M36 38Q41 29 51 27" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="3" stroke-linecap="round"/>${o.f}</g>${o.x}</svg>`}
+
+// Lo que Pompi dice al llegar a cada parada (mood, texto)
+const GL=[
+['idle','¡Arrancamos! Yo soy la figura, pero el espacio que me rodea también dibuja. Tocá el florero y fijate cómo cambia lo que ves.'],
+['mystery','Mmm… no puedo ver todo lo que hay afuera del marco, pero lo imagino. Deslizá el marco y mirá qué te cuenta cada recorte.'],
+['idle','Si me paro detrás de la montaña, parezco más lejos. Agregá los planos de a uno y mirá cómo aparece la profundidad.'],
+['happy','Con una sola línea puedo verme tranquilo, nervioso o contento. Elegí una y fijate cómo cambia mi cara.'],
+['idle','Llegó el color. Yo soy violeta, pero ¿sabés cómo se arma? Tocá dos primarios y mezclemos.'],
+['idle','¿Con qué colores me llevo bien? Tocá un color del círculo y te muestro a sus amigos.'],
+['happy','Cada emoción tiene su color y yo pongo la cara. Probá con cada una.'],
+['idle','¿Qué mirás primero? Yo me agrando y me pongo colorido para que me veas. Elegí quién manda en la imagen.'],
+['idle','Componer es decidir dónde me paro. Movéme con el deslizador: en el centro estoy quieto, al costado hay más movimiento.'],
+['idle','Si me das vuelta como un espejo, ¡quedo igual! Poné formas en un ala y mirá cómo se refleja.'],
+['idle','Ahora me toca preguntar a mí. Te acompaño en las 12 preguntas. Leé con calma: si te apurás, me pongo nervioso.'],
+['happy','Último tramo: el laboratorio. Armá lo que quieras y yo te cuento qué pasa con cada decisión.']
+];
+const gd=i=>`<div class="guia"><div class="pw" data-m="${GL[i][0]}">${pompi(GL[i][0])}</div><div class="bub"><b>Pompi</b><span class="bt">${GL[i][1]}</span></div></div>`;
+let RDY=false,ft=0,fm_='';
+function fpop(m,t){const f=$('fp');if(!f||m==='idle')return;if(fm_!==m){fm_=m;f.querySelector('.fpm').innerHTML=pompi(m)}f.querySelector('.fb').innerHTML=t;f.classList.add('on');clearTimeout(ft);ft=setTimeout(()=>f.classList.remove('on'),4500)}
+
+function setG(a,m,t){const w=a.querySelector('.pw'),b=a.querySelector('.bt');if(!w||!b)return;if(w.dataset.m!==m){w.dataset.m=m;w.innerHTML=pompi(m)}b.innerHTML=t}
+function sayAt(el,m,t,keep){if(!RDY||!el)return;const a=el.closest('article');if(!a)return;setG(a,m,t);fpop(m,t);clearTimeout(a._t);if(!keep){const g=GL[+a.dataset.i];a._t=setTimeout(()=>setG(a,g[0],g[1]),6500)}}
+
 const nav=$('nav'),M=$('m');function $(i){return document.getElementById(i)}
+// cabecera: Pompi muestra sus caras
+$('hp').innerHTML=pompi('happy');
+document.querySelectorAll('[data-leg]').forEach(e=>e.innerHTML=pompi(e.dataset.leg));
 nav.innerHTML='<button class="on" data-f="all">Todo</button>'+Object.keys(MES).map(k=>`<button data-f="${k}">${MES[k].split(' · ')[0]}</button>`).join('');
-M.innerHTML=D.map((d,n)=>`<article data-m="${d.m}"><div class="top"><span class="num">${n+1}</span><div><div class="mes">${MES[d.m]}</div><h2>${d.t}</h2></div></div>
+M.innerHTML=D.map((d,n)=>`<article data-m="${d.m}" data-i="${n}"><div class="top"><span class="num">${n+1}</span><div><div class="mes">${MES[d.m]}</div><h2>${d.t}</h2></div></div>${gd(n)}
 <p>${d.i}</p><div class="keys">${d.k.map(x=>`<span>${x}</span>`).join('')}</div>${d.w?`<div class="w" id="w${d.w}"></div>`:''}
-<details><summary>📜 Un poco de historia</summary><p>${d.h}</p></details>
-<details open><summary>🌎 Ejemplos cercanos</summary>${d.e.map(o=>`<div class="obra"><div><b>${o[0]}</b>${o[1]?`<small>${o[1]}</small>`:''}<p style="margin:4px 0 0">${o[2]}</p></div>${o[3]?`<a target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&q=${encodeURIComponent(o[3])}">Ver imagen ↗</a>`:''}</div>`).join('')}</details>${d.b?`<p class="br">➡️ ${d.b}</p>`:''}</article>`).join('');
-nav.onclick=e=>{const f=e.target.dataset.f;if(!f)return;nav.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b===e.target));M.querySelectorAll('article').forEach(a=>a.classList.toggle('hide',f!='all'&&a.dataset.m!=f))};
+<details><summary>📜 Pompi te cuenta un poco de historia</summary><p>${d.h}</p></details>
+<details open><summary>🌎 Mirá conmigo: ejemplos cercanos</summary>${d.e.map(o=>`<div class="obra"><div><b>${o[0]}</b>${o[1]?`<small>${o[1]}</small>`:''}<p style="margin:4px 0 0">${o[2]}</p></div>${o[3]?`<a target="_blank" rel="noopener" href="https://www.google.com/search?tbm=isch&q=${encodeURIComponent(o[3])}">Ver imagen ↗</a>`:''}</div>`).join('')}</details>${d.b?`<p class="br">➡️ <b>Siguiente parada:</b> ${d.b}</p>`:''}</article>`).join('');
+nav.onclick=e=>{const f=e.target.dataset.f;if(!f)return;nav.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b===e.target));M.querySelectorAll('article').forEach(a=>a.classList.toggle('hide',f!='all'&&a.dataset.m!=f));bt()};
 // widgets
 $('wvase').innerHTML='<svg viewBox="0 0 200 200" width="180"><rect width="200" height="200" fill="#222"/><path id="va" d="M70 10C95 60 95 80 70 110C60 130 60 160 70 190L130 190C140 160 140 130 130 110C105 80 105 60 130 10Z"/><path class="fc" d="M0 0L70 10C95 60 95 80 70 110C60 130 60 160 70 190L0 200Z"/><path class="fc" d="M200 0L130 10C105 60 105 80 130 110C140 160 140 130 130 190L200 200Z" style="display:none"/><path class="fc" d="M200 0L130 10C105 60 105 80 130 110C140 130 140 160 130 190L200 200Z"/></svg><div><button onclick="vs(1)">Ver el florero</button><button onclick="vs(0)">Ver las caras</button></div>';
-function vs(a){$('va').setAttribute('fill',a?'#f2c94c':'#333');document.querySelectorAll('.fc').forEach(f=>f.setAttribute('fill',a?'#333':'#e9748c'))}vs(1);
+function vs(a){$('va').setAttribute('fill',a?'#f2c94c':'#333');document.querySelectorAll('.fc').forEach(f=>f.setAttribute('fill',a?'#333':'#e9748c'));sayAt($('wvase'),a?'idle':'happy',a?'Ahora veo un florero. Lo amarillo es la figura y lo negro, el fondo.':'¡Mirá! Ahora el fondo se volvió dos caras. El espacio negativo también dibuja.')}vs(1);
 const C={r:'#d62839',a:'#f4c430',b:'#1f5fbf'},NM={r:'rojo',a:'amarillo',b:'azul'},MX={ra:['#f08a1c','naranja'],ab:['#2e9e5b','verde'],rb:['#7a3cb0','violeta']};let pk=[];
 $('wmix').innerHTML='Tocá dos primarios: '+Object.keys(C).map(k=>`<span class="dot" style="background:${C[k]}" onclick="mx('${k}')"></span>`).join('')+' <span class="dot" id="mr" style="background:#ccc"></span> <b id="mt">?</b>';
-function mx(c){if(pk.length>=2)pk=[];pk.push(c);if(pk.length<2){$('mr').style.background='#ccc';$('mt').textContent=NM[c]+' + …';return}const[a,b]=pk;if(a==b){$('mt').textContent='Es el mismo color';return}const m=MX[[a,b].sort().join('')]||MX[[b,a].join('')]||MX[[a,b].join('')];const key=['ra','ab','rb'].find(k=>k.includes(a)&&k.includes(b));const r=MX[key];$('mr').style.background=r[0];$('mt').textContent=NM[a]+' + '+NM[b]+' = '+r[1]}
+function mx(c){if(pk.length>=2)pk=[];pk.push(c);if(pk.length<2){$('mr').style.background='#ccc';$('mt').textContent=NM[c]+' + …';sayAt($('wmix'),'mystery','¿Y con cuál lo mezclo? Tocá otro primario.');return}const[a,b]=pk;if(a==b){$('mt').textContent='Es el mismo color';sayAt($('wmix'),'doubt','Mmm… elegiste el mismo dos veces. Probá con uno distinto.');return}const m=MX[[a,b].sort().join('')]||MX[[b,a].join('')]||MX[[a,b].join('')];const key=['ra','ab','rb'].find(k=>k.includes(a)&&k.includes(b));const r=MX[key];$('mr').style.background=r[0];$('mt').textContent=NM[a]+' + '+NM[b]+' = '+r[1];sayAt($('wmix'),'happy','¡Salió '+r[1]+'! Dos primarios mezclados hacen un secundario.')}
 $('wframe').innerHTML='<svg viewBox="0 0 400 200" width="400" style="max-width:100%"><rect width="400" height="200" fill="#8fd3ff"/><rect y="150" width="400" height="50" fill="#6cc070"/><circle cx="50" cy="40" r="22" fill="#ffd23f"/><rect x="110" y="95" width="80" height="60" fill="#e17055"/><path d="M100 95L150 55L200 95Z" fill="#b33939"/><rect x="138" y="120" width="24" height="35" fill="#5b3a29"/><rect x="250" y="110" width="14" height="45" fill="#6d4c2f"/><circle cx="257" cy="95" r="32" fill="#2e8b57"/><text x="320" y="170" font-size="40">🐱</text><text x="350" y="60" font-size="30">🐦</text><rect id="fl" height="200" fill="#000" opacity=".9"/><rect id="fr" height="200" fill="#000" opacity=".9"/></svg><div><input type="range" id="fs" min="0" max="260" value="0" style="width:80%"></div><div>Deslizá el marco: ¿qué imaginás que hay afuera?</div>';
 function fr(){const x=+$('fs').value;$('fl').setAttribute('x',0);$('fl').setAttribute('width',x);$('fr').setAttribute('x',x+140);$('fr').setAttribute('width',260-x)}$('fs').oninput=fr;fr();
+$('fs').addEventListener('change',()=>sayAt($('wframe'),'mystery','Hmm… no veo todo, pero me imagino el resto. A eso le decimos continuidad imaginaria.'));
 let ln_=0;$('wlay').innerHTML='<svg viewBox="0 0 300 170" width="320" style="max-width:100%"><rect width="300" height="170" fill="#dff3ff"/><g class="ly"><circle cx="240" cy="38" r="20" fill="#ffd23f"/></g><g class="ly"><path d="M0 115L60 48L120 115L170 58L240 115L300 66V170H0Z" fill="#b8b5ff"/></g><g class="ly"><path d="M0 135Q80 88 160 130T300 116V170H0Z" fill="#7bcf9a"/></g><g class="ly"><path d="M30 170L50 105L70 170Z" fill="#1f6f4a"/><path d="M200 170L235 85L270 170Z" fill="#1f6f4a"/><rect y="158" width="300" height="12" fill="#145a3a"/></g></svg><div><button onclick="ly(1)">➕ Agregar plano</button><button onclick="ly(-9)">Reiniciar</button></div>';
-function ly(d){ln_=d<-1?0:Math.min(4,ln_+d);document.querySelectorAll('.ly').forEach((g,i)=>{g.style.transition='opacity .5s';g.style.opacity=i<ln_?1:0})}ly(-9);
+function ly(d){ln_=d<-1?0:Math.min(4,ln_+d);document.querySelectorAll('.ly').forEach((g,i)=>{g.style.transition='opacity .5s';g.style.opacity=i<ln_?1:0});if(d>0)sayAt($('wlay'),ln_>=4?'happy':'idle',ln_>=4?'¡Cuatro planos! Ahora sí hay un paisaje con distancia.':'Plano '+ln_+': lo que tapa parece estar más cerca.')}ly(-9);
 $('wlin').innerHTML='<svg viewBox="0 0 200 200" width="190"><defs><clipPath id="cp"><circle cx="100" cy="100" r="80"/></clipPath></defs><circle cx="100" cy="100" r="80" fill="#fff" stroke="#222" stroke-width="3"/><g id="ln" clip-path="url(#cp)" stroke="#222"></g></svg><div><input type="range" id="ls" min="0" max="40" value="8" style="width:80%"></div><div>Más líneas juntas = más densidad = más sombra</div>';
 function hc(){const k=+$('ls').value;let s='';for(let i=0;i<k;i++){const x=60+i*150/Math.max(k,1);s+=`<line x1="${x}" y1="10" x2="${x-80}" y2="190" stroke-width="1.5"/>`}for(let i=0;i<k-24;i++){const x=20+i*12;s+=`<line x1="${x}" y1="190" x2="${x+80}" y2="10"/>`}$('ln').innerHTML=s}$('ls').oninput=hc;hc();
+$('ls').addEventListener('change',()=>sayAt($('wlin'),+$('ls').value>24?'mystery':'idle',+$('ls').value>24?'Cuantas más líneas juntas, más oscuro me pongo. Así aparece el volumen.':'Con pocas líneas me veo clarito. Sumá más para que haya sombra.'));
 $('wcmp').innerHTML='<svg viewBox="0 0 300 150" width="300"><rect x="2" y="2" width="296" height="146" fill="#fff" stroke="#222" stroke-width="4"/><line x1="150" y1="2" x2="150" y2="148" stroke="#ccc" stroke-dasharray="4"/><text id="cs" y="90" font-size="48" text-anchor="middle">⭐</text></svg><div><input type="range" id="cx" min="20" max="280" value="150" style="width:80%"></div><b id="cm"></b>';
-function cp(){const x=+$('cx').value;$('cs').setAttribute('x',x);$('cm').textContent=Math.abs(x-150)<25?'Centro: equilibrio, pero queda estática':x<60||x>240?'Pegada al borde: mucha tensión, parece escaparse':'Descentrada: más movimiento e interés'}$('cx').oninput=cp;cp();
+function cp(){const x=+$('cx').value;$('cs').setAttribute('x',x);$('cm').textContent=Math.abs(x-150)<25?'Centro: equilibrio, pero queda estática':x<60||x>240?'Pegada al borde: mucha tensión, parece escaparse':'Descentrada: más movimiento e interés'}$('cx').oninput=()=>{cp();const x=+$('cx').value;sayAt($('wcmp'),Math.abs(x-150)<25?'idle':x<60||x>240?'hurry':'happy',Math.abs(x-150)<25?'En el centro estoy firme, pero quedo muy quieto.':x<60||x>240?'¡Ay, me escapo del borde! Esto genera mucha tensión.':'Descentrado tengo más movimiento. ¡Me gusta!')};cp();
 
 const RY=[['Rojo','#d62839'],['Rojo-naranja','#ee4b24'],['Naranja','#f08a1c'],['Amarillo-naranja','#f6b21b'],['Amarillo','#f5dc1e'],['Amarillo-verde','#a5cf2e'],['Verde','#2e9e5b'],['Azul-verde','#1a9a9a'],['Azul','#1f5fbf'],['Azul-violeta','#4a47b8'],['Violeta','#7a3cb0'],['Rojo-violeta','#a8307e']];
 function wedge(i){const f=a=>[Math.cos(a),Math.sin(a)],a0=(i*30-105)*Math.PI/180,a1=(i*30-75)*Math.PI/180,R=88,r=34,p=(v,k)=>(100+v[0]*k).toFixed(1)+' '+(100+v[1]*k).toFixed(1);return `M${p(f(a0),r)}L${p(f(a0),R)}A${R} ${R} 0 0 1 ${p(f(a1),R)}L${p(f(a1),r)}A${r} ${r} 0 0 0 ${p(f(a0),r)}Z`}
-$('wharm').innerHTML='<div>Tocá un color del círculo</div><svg viewBox="0 0 200 200" width="190">'+RY.map((c,i)=>`<path d="${wedge(i)}" fill="${c[1]}" stroke="#fff" stroke-width="2" style="cursor:pointer" onclick="hm(${i})"/>`).join('')+'</svg><div id="hr"></div>';
+$('wharm').innerHTML='<div>Tocá un color del círculo</div><svg viewBox="0 0 200 200" width="190">'+RY.map((c,i)=>`<path d="${wedge(i)}" fill="${c[1]}" stroke="#fff" stroke-width="2" style="cursor:pointer" onclick="hm(${i},1)"/>`).join('')+'</svg><div id="hr"></div>';
 function sq(c){return `<span class="dot" style="background:${c};border-radius:8px;width:38px;height:38px"></span>`}
-function hm(i){const g=j=>RY[(j+12)%12][1],c=RY[i][1];const mono=[75,50,0,-30,-55].map(v=>v>=0?`color-mix(in srgb,${c} ${100-v}%,white)`:`color-mix(in srgb,${c} ${100+v}%,black)`);
-$('hr').innerHTML=`<p><b>Complementarios:</b><br>${sq(c)}${sq(g(i+6))}<br>${RY[i][0]} y ${RY[(i+6)%12][0]}</p><p><b>Análogos:</b><br>${sq(g(i-1))}${sq(c)}${sq(g(i+1))}</p><p><b>Monocromático:</b><br>${mono.map(sq).join('')}</p>`}hm(0);
+function hm(i,u){const g=j=>RY[(j+12)%12][1],c=RY[i][1];const mono=[75,50,0,-30,-55].map(v=>v>=0?`color-mix(in srgb,${c} ${100-v}%,white)`:`color-mix(in srgb,${c} ${100+v}%,black)`);
+$('hr').innerHTML=`<p><b>Complementarios:</b><br>${sq(c)}${sq(g(i+6))}<br>${RY[i][0]} y ${RY[(i+6)%12][0]}</p><p><b>Análogos:</b><br>${sq(g(i-1))}${sq(c)}${sq(g(i+1))}</p><p><b>Monocromático:</b><br>${mono.map(sq).join('')}</p>`;if(u)sayAt($('wharm'),'happy','¡Mirá! El '+RY[i][0].toLowerCase()+' se lleva muy bien con sus vecinos y contrasta con su opuesto.')}hm(0);
 const EM={Alegría:[['#f5dc1e','#f08a1c','#ee4b24'],'Amarillos y naranjas: cálidos y luminosos'],Calma:[['#1f5fbf','#1a9a9a','#a9d6e5'],'Azules y verdes suaves: fríos y tranquilos'],Enojo:[['#d62839','#8b0000','#1a1a1a'],'Rojos intensos y oscuros: fuerza y peligro'],Tristeza:[['#4a6fa5','#7f8fa9','#b8c0cc'],'Azules apagados y grisáceos: poca saturación'],Miedo:[['#2b1b4a','#6a3d9a','#111111'],'Violetas y negros: oscuridad y misterio'],Esperanza:[['#2e9e5b','#a5cf2e','#e9f5d0'],'Verdes: naturaleza y descanso']};
-$('wemo').innerHTML='<div>'+Object.keys(EM).map(k=>`<button onclick="em('${k}')">${k}</button>`).join('')+'</div><div id="ep" style="margin-top:8px"></div><small>Ojo: cada persona y cada cultura puede sentirlo distinto.</small>';
-function em(k){$('ep').innerHTML=`<div style="display:flex;height:60px;border-radius:10px;overflow:hidden">${EM[k][0].map(c=>`<div style="flex:1;background:${c}"></div>`).join('')}</div><b>${k}:</b> ${EM[k][1]}`}em('Alegría');
+const EMM={Alegría:'happy',Calma:'idle',Enojo:'hurry',Tristeza:'doubt',Miedo:'mystery',Esperanza:'cool'};
+$('wemo').innerHTML='<div>'+Object.keys(EM).map(k=>`<button onclick="em('${k}',1)">${k}</button>`).join('')+'</div><div id="ep" style="margin-top:8px"></div><small>Ojo: cada persona y cada cultura puede sentirlo distinto.</small>';
+function em(k,u){$('ep').innerHTML=`<div style="display:flex;height:60px;border-radius:10px;overflow:hidden">${EM[k][0].map(c=>`<div style="flex:1;background:${c}"></div>`).join('')}</div><b>${k}:</b> ${EM[k][1]}`;if(u)sayAt($('wemo'),EMM[k],'<b>'+k+':</b> '+EM[k][1]+'. Así me siento yo con esos colores.')}em('Alegría');
 const SH=[['circle','#d62839'],['rect','#1f5fbf'],['path','#f4c430']];let ds=0,dmod=1;
 $('wdom').innerHTML='<svg viewBox="0 0 300 120" width="300"><circle id="d0" cx="50" cy="60" r="30"/><rect id="d1" x="118" y="30" width="60" height="60"/><path id="d2" d="M240 28L272 92H208Z"/></svg><div><button onclick="dmo(1)">Dominar con color</button><button onclick="dmo(2)">Dominar con tamaño</button><button onclick="dmo(3)">Con los dos</button></div><div>Tocá una figura para elegir cuál manda</div>';
-function dmo(m){dmod=m;dm()}
+function dmo(m){dmod=m;dm();sayAt($('wdom'),'happy',m==1?'Con el color la figura elegida se destaca sin cambiar de tamaño.':m==2?'¡Me agrando! El tamaño también hace que me miren primero.':'Color y tamaño juntos: imposible no mirarme.')}
 function dm(){SH.forEach((s,j)=>{const e=$('d'+j),on=j==ds;e.setAttribute('fill',(dmod&1)&&!on?'#c9c4b8':(dmod&1)||on?s[1]:'#9a958a');if(!(dmod&1)){e.setAttribute('fill','#9a958a')}e.style.transformBox='fill-box';e.style.transformOrigin='center';e.style.transition='all .3s';e.style.transform=(dmod&2)?(on?'scale(1.7)':'scale(.8)'):'none'})}
 [0,1,2].forEach(i=>{$('d'+i).style.cursor='pointer';$('d'+i).onclick=()=>{ds=i;dm()}});dm();
 
@@ -134,10 +232,10 @@ function conf(){for(let i=0;i<70;i++){const e=document.createElement('span');e.c
 // frame presets + guess game
 $('wframe').insertAdjacentHTML('beforeend','<div><button onclick="gt(0)">☀️ El sol</button><button onclick="gt(70)">🏠 La casa</button><button onclick="gt(260)">🐱 El gato</button></div><hr><b>¿Qué es? Mostrá de a poco</b><br><svg viewBox="0 0 300 160" width="300" style="max-width:100%;background:#fff"><defs><clipPath id="gc"><circle id="gr" cx="70" cy="110" r="28"/></clipPath></defs><g clip-path="url(#gc)" fill="none" stroke="#222" stroke-width="5" stroke-linecap="round"><circle cx="70" cy="110" r="40"/><circle cx="230" cy="110" r="40"/><path d="M70 110L120 60H190L230 110M120 60L150 110H70M150 110L190 60M115 52H135M190 60L200 38H220"/></g></svg><div id="go"><button onclick="gm(1)">Mostrar más 🔍</button></div><div id="gq"></div>');
 function gt(v){const a=+$('fs').value,t0=performance.now();(function f(t){const k=Math.min(1,(t-t0)/600);$('fs').value=a+(v-a)*k;fr();if(k<1)requestAnimationFrame(f)})(t0)}
-let gs=0;const GR=[28,70,120,200];function gm(d){gs=Math.min(3,gs+d);$('gr').setAttribute('r',GR[gs]);$('gq').innerHTML=gs<3?'¿Una bici, un auto, una moto? Cada pista cambia tu idea.':'<b>¡Una bicicleta!</b> Cuanta más información, más fácil reconstruir el todo. Pero mostrar menos genera más misterio.';if(gs==3)$('go').innerHTML='<button onclick="gs=0;$(\'gr\').setAttribute(\'r\',28);$(\'gq\').innerHTML=\'\';$(\'go\').innerHTML=\'<button onclick=gm(1)>Mostrar más 🔍</button>\'">Reiniciar</button>'}
+let gs=0;const GR=[28,70,120,200];function gm(d){gs=Math.min(3,gs+d);$('gr').setAttribute('r',GR[gs]);$('gq').innerHTML=gs<3?'¿Una bici, un auto, una moto? Cada pista cambia tu idea.':'<b>¡Una bicicleta!</b> Cuanta más información, más fácil reconstruir el todo. Pero mostrar menos genera más misterio.';if(gs==3)$('go').innerHTML='<button onclick="gs=0;$(\'gr\').setAttribute(\'r\',28);$(\'gq\').innerHTML=\'\';$(\'go\').innerHTML=\'<button onclick=gm(1)>Mostrar más 🔍</button>\'">Reiniciar</button>';sayAt($('wframe'),gs<3?'mystery':'happy',gs<3?'¿Qué será? Cada pista nueva me cambia la idea.':'¡Una bicicleta! Con más información es fácil; con menos, hay más misterio.')}
 // overlap
 $('wlay').insertAdjacentHTML('beforeend','<hr><b>Tocá una figura para traerla adelante</b><br><svg id="ov" viewBox="0 0 240 130" width="260" style="max-width:100%"><g id="og"><circle cx="85" cy="65" r="45" fill="#d62839"/><rect x="95" y="25" width="85" height="80" fill="#1f5fbf"/><path d="M110 115L150 30L195 115Z" fill="#f5dc1e"/></g></svg>');
-document.querySelectorAll('#og>*').forEach(e=>{e.style.cursor='pointer';e.onclick=()=>$('og').appendChild(e)});
+document.querySelectorAll('#og>*').forEach(e=>{e.style.cursor='pointer';e.onclick=()=>{$('og').appendChild(e);sayAt($('wlay'),'happy','¡Esa figura pasó al frente! Lo que tapa a lo otro parece estar más cerca.')}});
 // quiz
 const Q=[['Una figura negra rodeada de una zona blanca. ¿Cómo se llama la zona que rodea a la figura?',['Espacio positivo','Espacio negativo','Línea de contorno'],1,'La zona que rodea a la figura es el espacio negativo.'],
 ['Una figura roja y una verde, enfrentadas en el círculo cromático. ¿Qué relación tienen?',['Análogos','Complementarios','Monocromáticos'],1,'Los colores opuestos en el círculo son complementarios.'],
@@ -151,22 +249,29 @@ const Q=[['Una figura negra rodeada de una zona blanca. ¿Cómo se llama la zona
 ['¿Qué pasaría si hacés una figura cada vez más pequeña hacia arriba de la hoja?',['Parece que se aleja','Parece que se acerca','Se vuelve simétrica'],0,'Más chico y más arriba sugiere distancia.'],
 ['Si algo no aparece en una imagen, ¿significa que no existe?',['Sí, siempre','No: puede continuar fuera del marco','Solo si es chico'],1,'Una imagen no siempre muestra todo: a veces alcanza con una parte.'],
 ['Una paleta con un solo color en versiones más claras y más oscuras es...',['Complementaria','Análoga','Monocromática'],2,'Un solo color con variaciones de valor es monocromático.']];
-let qi=0,qs=0;
-function qr(){const w=$('wquiz');if(qi>=Q.length){w.innerHTML=`<h3>🏆 ${qs} de ${Q.length}</h3><p>${qs>=10?'¡Experto/a en imágenes!':qs>=6?'¡Muy bien! Repasá lo que falló y volvé a jugar.':'¡Buen comienzo! Releé las clases y probá de nuevo.'}</p><button onclick="qi=0;qs=0;qr()">Jugar de nuevo</button>`;if(qs>=8)conf();return}
-const[q,o]=Q[qi];w.innerHTML=`<small>Pregunta ${qi+1} de ${Q.length} · puntos: ${qs}</small><h3 style="margin:6px 0">${q}</h3>${o.map((x,i)=>`<button class="opt" onclick="qa(${i})">${x}</button>`).join('')}<div id="qf"></div>`}
-function qa(i){const[,o,a,e]=Q[qi],bs=document.querySelectorAll('#wquiz .opt');if(bs[0].disabled)return;bs.forEach((b,j)=>{b.disabled=true;if(j==a)b.classList.add('ok');else if(j==i)b.classList.add('no')});if(i==a)qs++;$('qf').innerHTML=`<p><b>${i==a?'¡Correcto! ✅':'Casi 🤔'}</b> ${e}</p><button onclick="qi++;qr()">Siguiente ➡️</button>`}
+let qi=0,qs=0,qt=0;const QM=[9,10];
+const QOK=['¡Eso es! Sabía que ibas a poder.','¡Bien ahí! Me hacés muy feliz.','¡Correcto! Estoy saltando de alegría.','¡Exacto! Vamos con la que sigue.'];
+const QNO=['Mmm… casi. Leé la explicación de abajo y seguimos juntos.','Uy, yo también dudé. Fijate por qué es otra la respuesta.','No pasa nada, así se aprende. Mirá la pista y probamos con la próxima.'];
+function qg(m,t){const a=$('aj');if(!a||!RDY)return;setG(a,m,t);fpop(m,t);clearTimeout(a._t)}
+function qr(){const w=$('wquiz');if(qi>=Q.length){w.innerHTML=`<h3>🏆 ${qs} de ${Q.length}</h3><p>${qs>=10?'¡Experto/a en imágenes!':qs>=6?'¡Muy bien! Repasá lo que falló y volvé a jugar.':'¡Buen comienzo! Releé las clases y probá de nuevo.'}</p><button onclick="qi=0;qs=0;qr()">Jugar de nuevo</button>`;qg(qs>=10?'cool':qs>=6?'happy':'doubt',qs>=10?'¡Sos un genio del arte! Me pongo los lentes para festejar.':qs>=6?'¡Muy bien! Repasemos juntos lo que falló y volvé a jugar.':'Mmm… este recorrido todavía tiene misterios. Releé las paradas y probemos otra vez.');if(qs>=8)conf();return}
+const[q,o]=Q[qi];w.innerHTML=`<small>Pregunta ${qi+1} de ${Q.length} · puntos: ${qs}</small><h3 style="margin:6px 0">${q}</h3>${o.map((x,i)=>`<button class="opt" onclick="qa(${i})">${x}</button>`).join('')}<div id="qf"></div>`;qt=Date.now();if(QM.includes(qi))qg('mystery','Hmm… esta pregunta tiene truco. Pensala bien antes de elegir.');else qg('idle','Pregunta '+(qi+1)+': leé con calma, yo espero.')}
+function qa(i){const[,o,a,e]=Q[qi],bs=document.querySelectorAll('#wquiz .opt');if(bs[0].disabled)return;const fast=Date.now()-qt<2200;bs.forEach((b,j)=>{b.disabled=true;if(j==a)b.classList.add('ok');else if(j==i)b.classList.add('no')});if(i==a)qs++;$('qf').innerHTML=`<p><b>${i==a?'¡Correcto! ✅':'Casi 🤔'}</b> ${e}</p><button onclick="qi++;qr()">Siguiente ➡️</button>`;
+if(fast)qg('hurry',i==a?'¡Correcto, pero qué rápido! Leé con calma la próxima, ¿dale?':'¡Ey, despacio! Te apuraste. Leé la pregunta con calma.');else if(i==a)qg('happy',QOK[qi%QOK.length]);else qg('doubt',QNO[qi%QNO.length])}
 // articles juego + lab
-M.insertAdjacentHTML('beforeend','<article id="aj" data-m="juego"><div class="top"><span class="num">🎮</span><div><div class="mes">Juego · Desafío</div><h2>¿Cuánto sabés?</h2></div></div><p>12 preguntas con conceptos, verdadero o falso y «¿qué pasaría si…?». ¡Si sacás 8 o más hay sorpresa!</p><div class="w nl" id="wquiz"></div></article><article id="al" data-m="lab"><div class="top"><span class="num">🧪</span><div><div class="mes">Laboratorio · Experimentá</div><h2>Laboratorio de formas</h2></div></div><p>Tocá el lienzo para poner formas, arrastralas, cambiá tamaños y colores. Probá <b>superposición</b>, <b>tamaño</b>, <b>simetría</b> y <b>encuadre</b>. Tocá una figura para traerla adelante.</p><div class="w" id="wlab"></div></article>');
+M.insertAdjacentHTML('beforeend',`<article id="aj" data-m="juego" data-i="10"><div class="top"><span class="num">🎮</span><div><div class="mes">Juego · Desafío</div><h2>¿Cuánto sabés?</h2></div></div>${gd(10)}<p>Son 12 preguntas con conceptos, verdadero o falso y «¿qué pasaría si…?». Yo voy a poner cara según cómo respondas. ¡Si sacás 8 o más hay sorpresa!</p><div class="w nl" id="wquiz"></div></article><article id="al" data-m="lab" data-i="11"><div class="top"><span class="num">🧪</span><div><div class="mes">Laboratorio · Experimentá</div><h2>Laboratorio de formas</h2></div></div>${gd(11)}<p>Acá armamos juntos. Tocá el lienzo para poner formas, arrastralas, cambiá tamaños y colores. Probá <b>superposición</b>, <b>tamaño</b>, <b>simetría</b> y <b>encuadre</b>. Tocá una figura para traerla adelante.</p><div class="w" id="wlab"></div></article>`);
 nav.insertAdjacentHTML('beforeend','<button data-f="juego">🎮 Juego</button><button data-f="lab">🧪 Laboratorio</button><span id="star"></span>');
 qr();
 // lab
 const NS='http://www.w3.org/2000/svg';let sh_='c',col='#d62839',sz=34,mir=false,fm=0,dr=null,dx=0,dy=0;
-$('wlab').innerHTML='<div class="tb">'+[['c','⚫'],['s','🟦'],['t','🔺'],['e','⭐']].map(a=>`<button onclick="sh_='${a[0]}'">${a[1]}</button>`).join('')+'</div><div class="tb">'+RY.map(c=>`<span class="sw" style="background:${c[1]}" onclick="col='${c[1]}'"></span>`).join('')+'</div><div class="tb">Tamaño <input type="range" min="12" max="80" value="34" oninput="sz=+this.value"></div><svg id="lab" viewBox="0 0 360 250" style="width:100%;background:#fff;border:2px solid #222;border-radius:10px;touch-action:none"><line id="ml" x1="180" y1="0" x2="180" y2="250" stroke="#bbb" stroke-dasharray="5" style="display:none"/><g id="shp"></g><g id="msk" fill="#000" opacity=".88" style="pointer-events:none"><rect/><rect/><rect/><rect/></g></svg><div class="tb"><button id="bm" onclick="mir=!mir;$(\'ml\').style.display=mir?\'\':\'none\';this.textContent=mir?\'Espejo: sí\':\'Espejo: no\'">Espejo: no</button><button onclick="fm=(fm+1)%3;msk()">🖼️ Encuadre</button><button onclick="$(\'shp\').lastChild&&$(\'shp\').lastChild.remove()">↩️ Deshacer</button><button onclick="$(\'shp\').innerHTML=\'\'">🧽 Borrar</button></div>';
+$('wlab').innerHTML='<div class="tb">'+[['c','⚫'],['s','🟦'],['t','🔺'],['e','⭐']].map(a=>`<button onclick="sh_='${a[0]}'">${a[1]}</button>`).join('')+'</div><div class="tb">'+RY.map(c=>`<span class="sw" style="background:${c[1]}" onclick="col='${c[1]}'"></span>`).join('')+'</div><div class="tb">Tamaño <input type="range" min="12" max="80" value="34" oninput="sz=+this.value"></div><svg id="lab" viewBox="0 0 360 250" style="width:100%;background:#fff;border:2px solid #222;border-radius:10px;touch-action:none"><line id="ml" x1="180" y1="0" x2="180" y2="250" stroke="#bbb" stroke-dasharray="5" style="display:none"/><g id="shp"></g><g id="msk" fill="#000" opacity=".88" style="pointer-events:none"><rect/><rect/><rect/><rect/></g></svg><div class="tb"><button id="bm" onclick="mir=!mir;$(\'ml\').style.display=mir?\'\':\'none\';this.textContent=mir?\'Espejo: sí\':\'Espejo: no\'">Espejo: no</button><button id="be" onclick="fm=(fm+1)%3;msk()">🖼️ Encuadre</button><button onclick="$(\'shp\').lastChild&&$(\'shp\').lastChild.remove()">↩️ Deshacer</button><button onclick="$(\'shp\').innerHTML=\'\'">🧽 Borrar</button></div>';
+$('bm').addEventListener('click',()=>sayAt($('wlab'),mir?'happy':'idle',mir?'Espejo activado: cada forma que pongas tiene su gemela.':'Sin espejo, vos decidís cada lugar.'));
+$('be').addEventListener('click',()=>sayAt($('wlab'),'mystery',fm==0?'Sin encuadre se ve todo.':'Con este encuadre solo veo un pedazo. ¿Qué habrá afuera?'));
 function msk(){const W=[[360,250],[220,150],[120,90]][fm],x=(360-W[0])/2,y=(250-W[1])/2,r=$('msk').children,v=[[0,0,360,y],[0,y+W[1],360,250-y-W[1]],[0,y,x,W[1]],[x+W[0],y,360-x-W[0],W[1]]];v.forEach((a,i)=>{r[i].setAttribute('x',a[0]);r[i].setAttribute('y',a[1]);r[i].setAttribute('width',a[2]);r[i].setAttribute('height',a[3])})}msk();
 function pl(e){const x=+e.dataset.x,y=+e.dataset.y,r=+e.dataset.r,t=e.dataset.t;if(t=='c'){e.setAttribute('cx',x);e.setAttribute('cy',y)}else if(t=='s'){e.setAttribute('x',x-r);e.setAttribute('y',y-r)}else if(t=='t')e.setAttribute('points',`${x},${y-r} ${x+r},${y+r*.8} ${x-r},${y+r*.8}`);else{let p=[];for(let i=0;i<10;i++){const a=i*Math.PI/5-Math.PI/2,k=i%2?r*.45:r;p.push((x+Math.cos(a)*k).toFixed(1)+','+(y+Math.sin(a)*k).toFixed(1))}e.setAttribute('points',p.join(' '))}}
 function add(t,x,y){const e=document.createElementNS(NS,t=='c'?'circle':t=='s'?'rect':'polygon');e.dataset.t=t;e.dataset.x=x;e.dataset.y=y;e.dataset.r=sz;if(t=='c')e.setAttribute('r',sz);if(t=='s'){e.setAttribute('width',sz*2);e.setAttribute('height',sz*2)}e.setAttribute('fill',col);e.style.cursor='grab';pl(e);$('shp').appendChild(e)}
 function lp(e){const s=$('lab'),p=s.createSVGPoint();p.x=e.clientX;p.y=e.clientY;return p.matrixTransform(s.getScreenCTM().inverse())}
-$('lab').addEventListener('pointerdown',e=>{const p=lp(e);if(e.target.dataset&&e.target.dataset.t){dr=e.target;dx=+dr.dataset.x-p.x;dy=+dr.dataset.y-p.y;$('shp').appendChild(dr);$('lab').setPointerCapture(e.pointerId)}else{add(sh_,p.x,p.y);if(mir)add(sh_,360-p.x,p.y)}});
+const LB=['¡Qué buena forma! Fijate qué pasa si una tapa a otra.','Probá cambiar el tamaño: lo más grande se mira primero.','¡Me gusta cómo quedó! Mové las formas y mirá cómo cambia la composición.'];let lbi=0;
+$('lab').addEventListener('pointerdown',e=>{const p=lp(e);if(e.target.dataset&&e.target.dataset.t){dr=e.target;dx=+dr.dataset.x-p.x;dy=+dr.dataset.y-p.y;$('shp').appendChild(dr);$('lab').setPointerCapture(e.pointerId)}else{add(sh_,p.x,p.y);if(mir)add(sh_,360-p.x,p.y);sayAt($('wlab'),'happy',LB[lbi++%LB.length])}});
 $('lab').addEventListener('pointermove',e=>{if(!dr)return;const p=lp(e);dr.dataset.x=p.x+dx;dr.dataset.y=p.y+dy;pl(dr)});
 $('lab').addEventListener('pointerup',()=>dr=null);
 // stars + reveal
@@ -174,37 +279,54 @@ const seen=new Set(),tot=document.querySelectorAll('.w').length;let fin=0;functi
 document.querySelectorAll('.w').forEach((w,i)=>w.addEventListener('pointerdown',()=>{seen.add(i);st();if(seen.size==tot&&!fin){fin=1;conf();$('star').textContent='🏆 ¡Todo explorado!'}}));
 const io=window.IntersectionObserver?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.05}):null;
 document.querySelectorAll('article').forEach(a=>io?io.observe(a):a.classList.add('in'));
+M.querySelector('article').classList.add('in');
 
 // tipos de línea
 let sp='M150 60';for(let t=.2;t<12.6;t+=.2)sp+=`L${(150+Math.cos(t)*t*4.2).toFixed(1)} ${(60+Math.sin(t)*t*4.2).toFixed(1)}`;
 const LT={Horizontal:['M20 60H280','Calma, descanso y estabilidad. Pensá en el horizonte o en alguien acostado.'],Vertical:['M150 10V110','Fuerza, altura y firmeza. Pensá en árboles, columnas y edificios.'],Diagonal:['M30 105L270 15','Movimiento, dinamismo e inestabilidad. Algo que se cae o sale disparado.'],Curva:['M20 90C90 10 210 10 280 90','Suavidad, ternura y fluidez, como las formas de la naturaleza y del cuerpo.'],Ondulada:['M10 60C40 20 70 20 100 60S160 100 190 60S250 20 290 60','Ritmo y movimiento suave: el agua, el viento, la música.'],Zigzag:['M10 90L60 30L110 90L160 30L210 90L260 30L290 70','Nerviosismo, energía y peligro: un rayo, una alarma, un susto.'],Espiral:[sp,'Movimiento que gira hacia un centro: crecimiento, mareo, hipnosis.'],'Gruesa y fina':['M20 40H280|M20 85H280','La gruesa transmite fuerza e importancia; la fina, delicadeza y ligereza.']};
+const LM={Horizontal:'idle',Vertical:'cool',Diagonal:'hurry',Curva:'happy',Ondulada:'happy',Zigzag:'hurry',Espiral:'mystery','Gruesa y fina':'cool'};
 $('wlin').insertAdjacentHTML('beforeend','<hr><b>¿Qué transmite cada línea?</b><div class="tb">'+Object.keys(LT).map(k=>`<button onclick="lt('${k}')">${k}</button>`).join('')+'</div><svg viewBox="0 0 300 120" width="300" style="max-width:100%;background:#fff;border-radius:10px"><g id="lts"></g></svg><div id="ltt" style="min-height:3em"></div>');
-function lt(k){const[d,t]=LT[k];$('lts').innerHTML=d.split('|').map((x,i)=>`<path d="${x}" pathLength="1" fill="none" stroke="#7b5cd6" stroke-width="${k=='Gruesa y fina'?(i?2:14):5}" stroke-linecap="round" style="stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.1s ease"/>`).join('');requestAnimationFrame(()=>requestAnimationFrame(()=>$('lts').querySelectorAll('path').forEach(q=>q.style.strokeDashoffset=0)));$('ltt').innerHTML=`<b>${k}:</b> ${t}`}lt('Horizontal');
+function lt(k){const[d,t]=LT[k];$('lts').innerHTML=d.split('|').map((x,i)=>`<path d="${x}" pathLength="1" fill="none" stroke="#7b5cd6" stroke-width="${k=='Gruesa y fina'?(i?2:14):5}" stroke-linecap="round" style="stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.1s ease"/>`).join('');requestAnimationFrame(()=>requestAnimationFrame(()=>$('lts').querySelectorAll('path').forEach(q=>q.style.strokeDashoffset=0)));$('ltt').innerHTML=`<b>${k}:</b> ${t}`;sayAt($('wlin'),LM[k],'<b>'+k+':</b> '+t)}lt('Horizontal');
 // líneas en la composición
 const CZ={Horizontal:['<rect width="300" height="160" fill="#cfe9ff"/><rect y="70" width="300" height="50" fill="#8cc4ee"/><rect y="120" width="300" height="40" fill="#f3e1a8"/><circle cx="220" cy="62" r="16" fill="#ffd36b"/>','<path d="M0 70H300M0 95H300M0 120H300"/>','Calma y estabilidad: todo está «acostado» y en reposo.'],
 Vertical:['<rect width="300" height="160" fill="#e9f6e0"/>'+[40,95,150,205,260].map(x=>`<rect x="${x-5}" y="105" width="10" height="55" fill="#8a5a3b"/><path d="M${x-22} 115L${x} 8L${x+22} 115Z" fill="#3f9b64"/>`).join(''),[40,95,150,205,260].map(x=>`<path d="M${x} 0V160"/>`).join(''),'Fuerza y firmeza: los elementos «se levantan» y dan sensación de altura.'],
 Diagonal:['<rect width="300" height="160" fill="#fff1d6"/><path d="M0 160L300 40V160Z" fill="#9bd68a"/><circle cx="150" cy="86" r="13" fill="#fff" stroke="#333" stroke-width="3"/><path d="M175 78L215 62M178 92L218 76" stroke="#333" stroke-width="3" stroke-linecap="round"/>','<path d="M0 160L300 40M0 120L300 0M0 190L300 70"/>','Dinamismo y tensión: parece que algo se mueve o está por caer.']};
+const CM={Horizontal:'idle',Vertical:'cool',Diagonal:'hurry'};
 $('wcmp').insertAdjacentHTML('beforeend','<hr><b>Las líneas organizan la imagen</b><div class="tb">'+Object.keys(CZ).map(k=>`<button onclick="cz('${k}')">${k}</button>`).join('')+'<button onclick="czg()">👁️ Líneas guía</button></div><svg viewBox="0 0 300 160" width="300" style="max-width:100%;border-radius:10px"><g id="czs"></g><g id="czg" fill="none" stroke="#7b5cd6" stroke-width="2.5" stroke-dasharray="6 5" style="opacity:0;transition:opacity .4s"></g></svg><div id="czt" style="min-height:3em"></div>');
-function cz(k){$('czs').innerHTML=CZ[k][0];$('czg').innerHTML=CZ[k][1];$('czt').innerHTML=`<b>${k}:</b> ${CZ[k][2]}`}function czg(){const g=$('czg');g.style.opacity=g.style.opacity==1?0:1}cz('Horizontal');
+function cz(k){$('czs').innerHTML=CZ[k][0];$('czg').innerHTML=CZ[k][1];$('czt').innerHTML=`<b>${k}:</b> ${CZ[k][2]}`;sayAt($('wcmp'),CM[k],'<b>'+k+':</b> '+CZ[k][2])}function czg(){const g=$('czg');g.style.opacity=g.style.opacity==1?0:1}cz('Horizontal');
 
 // simetría con formas
 let SY=[],ssh='c',scol='#d62839',ssz=26,smode='m',son=true,sd=-1,sinv=null,sdx=0,sdy=0;
-$('wsym').innerHTML='<p style="margin:4px 0">Poné formas en un ala: <b>el espejo hace el resto</b>. Arrastralas y mirá cómo se mueve el reflejo.</p><div class="tb"><button onclick="sm(\'m\')">🦋 Mariposa</button><button onclick="sm(\'r\')">❄️ Mandala</button></div><div class="tb">'+[['c','● Círculo'],['s','■ Cuadrado'],['t','▲ Triángulo'],['e','★ Estrella']].map(a=>`<button onclick="ssh='${a[0]}'">${a[1]}</button>`).join('')+'</div><div class="tb">'+RY.map(c=>`<span class="sw" style="background:${c[1]}" onclick="scol='${c[1]}'"></span>`).join('')+'</div><div class="tb">Tamaño <input type="range" min="10" max="50" value="26" oninput="ssz=+this.value"></div><svg id="sy" viewBox="0 0 360 250" style="width:100%;background:#fff;border:2px solid #222;border-radius:10px;touch-action:none"><g id="sbg"></g><g id="sg"></g></svg><div class="tb"><button id="sbtn" onclick="son=!son;sr()">Simetría: SÍ</button><button onclick="SY.pop();sr()">↩️ Deshacer</button><button onclick="SY=[];sr()">🧽 Borrar</button></div><div id="stx" style="min-height:3em"></div>';
-function sm(m){smode=m;SY=[];sr()}
+$('wsym').innerHTML='<p style="margin:4px 0">Poné formas en un ala: <b>el espejo hace el resto</b>. Arrastralas y mirá cómo se mueve el reflejo.</p><div class="tb"><button onclick="sm(\'m\')">🦋 Mariposa</button><button onclick="sm(\'r\')">❄️ Mandala</button></div><div class="tb">'+[['c','● Círculo'],['s','■ Cuadrado'],['t','▲ Triángulo'],['e','★ Estrella']].map(a=>`<button onclick="ssh='${a[0]}'">${a[1]}</button>`).join('')+'</div><div class="tb">'+RY.map(c=>`<span class="sw" style="background:${c[1]}" onclick="scol='${c[1]}'"></span>`).join('')+'</div><div class="tb">Tamaño <input type="range" min="10" max="50" value="26" oninput="ssz=+this.value"></div><svg id="sy" viewBox="0 0 360 250" style="width:100%;background:#fff;border:2px solid #222;border-radius:10px;touch-action:none"><g id="sbg"></g><g id="sg"></g></svg><div class="tb"><button id="sbtn" onclick="tgs(this)">Simetría: SÍ</button><button onclick="SY.pop();sr()">↩️ Deshacer</button><button onclick="SY=[];sr()">🧽 Borrar</button></div><div id="stx" style="min-height:3em"></div>';
+function tgs(b){son=!son;sr();sayAt(b,son?'happy':'doubt',son?'Con simetría me veo ordenado y tranquilo.':'Sin simetría me siento desparejo: hay más movimiento y tensión.')}
+function sm(m){smode=m;SY=[];sr();sayAt($('wsym'),'mystery',m=='m'?'Una mariposa: simetría axial. Lo que pongas de un lado aparece del otro.':'Un mandala: simetría radial. Todo se repite alrededor del centro.')}
 function el2(m){const e=document.createElementNS(NS,m.t=='c'?'circle':m.t=='s'?'rect':'polygon');e.dataset.t=m.t;e.dataset.x=m.x;e.dataset.y=m.y;e.dataset.r=m.r;if(m.t=='c')e.setAttribute('r',m.r);if(m.t=='s'){e.setAttribute('width',m.r*2);e.setAttribute('height',m.r*2)}e.setAttribute('fill',m.c);e.setAttribute('stroke','#fff');e.setAttribute('stroke-width',2);e.style.cursor='grab';pl(e);return e}
 function sr(){let bg='';if(smode=='m')bg='<ellipse cx="110" cy="95" rx="75" ry="58" fill="#faf5ff" stroke="#cbbbe8" stroke-width="3"/><ellipse cx="250" cy="95" rx="75" ry="58" fill="#faf5ff" stroke="#cbbbe8" stroke-width="3"/><ellipse cx="125" cy="170" rx="52" ry="42" fill="#faf5ff" stroke="#cbbbe8" stroke-width="3"/><ellipse cx="235" cy="170" rx="52" ry="42" fill="#faf5ff" stroke="#cbbbe8" stroke-width="3"/><ellipse cx="180" cy="130" rx="9" ry="72" fill="#6a5a7a"/><path d="M180 60Q165 30 150 25M180 60Q195 30 210 25" stroke="#6a5a7a" stroke-width="3" fill="none"/>';else bg='<g fill="none" stroke="#d9cdf0" stroke-width="2" stroke-dasharray="5 5"><circle cx="180" cy="125" r="40"/><circle cx="180" cy="125" r="80"/><circle cx="180" cy="125" r="118"/>'+[0,1,2,3,4,5].map(k=>`<path d="M180 125V0" transform="rotate(${k*60} 180 125)"/>`).join('')+'</g><circle cx="180" cy="125" r="5" fill="#6a5a7a"/>';
 $('sbg').innerHTML=bg;$('sbg').style.pointerEvents='none';
 const tr=smode=='m'?(son?['','translate(360 0) scale(-1 1)']:['']):(son?[0,1,2,3,4,5].map(k=>`rotate(${k*60} 180 125)`):['']);
 $('sg').innerHTML='';SY.forEach((m,i)=>tr.forEach(t=>{const g=document.createElementNS(NS,'g');g.setAttribute('transform',t);g.dataset.i=i;g.appendChild(el2(m));$('sg').appendChild(g)}));
 $('sbtn').textContent='Simetría: '+(son?'SÍ':'NO');$('stx').innerHTML=son?'<b>Simétrica:</b> se siente ordenada y tranquila.':'<b>Asimétrica:</b> se siente con más movimiento y tensión. Compará con la simétrica.'}
-$('sy').addEventListener('pointerdown',e=>{const g=e.target.parentNode,sp=$('sy').createSVGPoint();sp.x=e.clientX;sp.y=e.clientY;if(g&&g.parentNode&&g.parentNode.id=='sg'){sd=+g.dataset.i;sinv=g.getScreenCTM().inverse();const q=sp.matrixTransform(sinv);sdx=SY[sd].x-q.x;sdy=SY[sd].y-q.y;$('sy').setPointerCapture(e.pointerId)}else{const q=sp.matrixTransform($('sy').getScreenCTM().inverse());SY.push({t:ssh,x:q.x,y:q.y,r:ssz,c:scol});sr()}});
+$('sy').addEventListener('pointerdown',e=>{const g=e.target.parentNode,sp=$('sy').createSVGPoint();sp.x=e.clientX;sp.y=e.clientY;if(g&&g.parentNode&&g.parentNode.id=='sg'){sd=+g.dataset.i;sinv=g.getScreenCTM().inverse();const q=sp.matrixTransform(sinv);sdx=SY[sd].x-q.x;sdy=SY[sd].y-q.y;$('sy').setPointerCapture(e.pointerId)}else{const q=sp.matrixTransform($('sy').getScreenCTM().inverse());SY.push({t:ssh,x:q.x,y:q.y,r:ssz,c:scol});sr();sayAt($('wsym'),son?'happy':'doubt',son?'¡Mirá! Mi reflejo hace lo mismo que vos.':'Sin espejo cada lado es distinto: quedo asimétrico.')}});
 $('sy').addEventListener('pointermove',e=>{if(sd<0)return;const sp=$('sy').createSVGPoint();sp.x=e.clientX;sp.y=e.clientY;const q=sp.matrixTransform(sinv);SY[sd].x=q.x+sdx;SY[sd].y=q.y+sdy;sr()});
 $('sy').addEventListener('pointerup',()=>sd=-1);sr();
-document.querySelectorAll('.w:not(.nl)').forEach(w=>w.insertAdjacentHTML('afterbegin','<div style="font-weight:700;margin-bottom:6px">🧪 Experimentá</div>'));
+document.querySelectorAll('.w:not(.nl)').forEach(w=>w.insertAdjacentHTML('afterbegin','<div style="font-weight:700;margin-bottom:6px">🧪 Experimentá conmigo</div>'));
 
 const PA=['#ffe3ec','#dff1ff','#e4f7df','#fff2c9','#ece2ff','#ffe8d4','#d9f6ee','#ffe4f4','#e1e8ff','#f1fbd2','#ffe9e0','#e0f7ff'];
 document.querySelectorAll('article').forEach((a,i)=>a.style.setProperty('--p',PA[i%PA.length]));
-const bl=document.querySelectorAll('.blob'),hs=document.querySelectorAll('.bg span');let tk=0;
-function sc(){tk=0;const y=scrollY,h=document.documentElement.scrollHeight-innerHeight;$('pb').style.width=(h>0?y/h*100:0)+'%';bl.forEach((b,i)=>b.style.transform=`translateY(${-y*(.06+.04*i)}px) rotate(${y*.05}deg)`);hs.forEach((b,i)=>b.style.translate=`0 ${y*(.15+.05*i)}px`)}
-addEventListener('scroll',()=>{if(!tk){tk=1;requestAnimationFrame(sc)}},{passive:true});sc();
-</script></body></html>
+
+// ---------- Recorrido: Pompi camina por el camino de paradas ----------
+const bl=document.querySelectorAll('.blob'),hs=document.querySelectorAll('.bg span');let tk=0,ARTS=[],DOTS=[],tm='',hu=0,ht=0,hw=false;
+function setT(m){if(m!==tm){tm=m;$('tp').innerHTML=pompi(m)}}
+function bt(){ARTS=[...M.querySelectorAll('article:not(.hide)')];$('tds').innerHTML=ARTS.map((a,i)=>`<span class="sd" style="left:${ARTS.length>1?i/(ARTS.length-1)*100:0}%"></span>`).join('');DOTS=[...$('tds').children];sc()}
+function sc(){tk=0;const y=scrollY,h=document.documentElement.scrollHeight-innerHeight;$('pb').style.width=(h>0?y/h*100:0)+'%';bl.forEach((b,i)=>b.style.transform=`translateY(${-y*(.06+.04*i)}px) rotate(${y*.05}deg)`);hs.forEach((b,i)=>b.style.translate=`0 ${y*(.15+.05*i)}px`);
+const mid=innerHeight*.5;let ci=-1,fq=0;ARTS.forEach((a,i)=>{const r=a.getBoundingClientRect();if(r.top<=mid){ci=i;fq=Math.min(1,Math.max(0,(mid-r.top)/Math.max(r.height,1)))}});
+const N=ARTS.length,pos=ci<0||N<2?0:Math.min(1,(ci+fq)/(N-1));$('tp').style.left=pos*100+'%';$('tf').style.width=pos*100+'%';DOTS.forEach((d,i)=>d.classList.toggle('on',i<=ci));
+const hur=performance.now()<hu;setT(hur?'hurry':pos>=.999?'happy':'idle');if(hur&&!hw)fpop('hurry','¡Más despacio, que no llego!');hw=hur}
+addEventListener('scroll',()=>{if(!tk){tk=1;requestAnimationFrame(sc)}},{passive:true});
+let sY=scrollY,sT=performance.now();
+addEventListener('scroll',()=>{const n=performance.now(),v=Math.abs(scrollY-sY)/Math.max(n-sT,1);sY=scrollY;sT=n;if(v>3.2){hu=n+1500;clearTimeout(ht);ht=setTimeout(sc,1600)}},{passive:true});
+addEventListener('resize',sc);
+bt();$('fp').querySelector('.fpm').innerHTML=pompi('idle');RDY=true;
+</script>
+
+</body></html>
